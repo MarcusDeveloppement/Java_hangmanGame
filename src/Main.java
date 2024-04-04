@@ -13,11 +13,24 @@ public class Main {
 
        System.out.println("Début du jeu !");
 
-       while (true){
+       while (true) {
            System.out.println(game);
            System.out.println("Veuillez entrer une lettre: ");
            final var letter = scanner.nextLine().charAt(0);
-       }
 
+           game.guessLetter(letter);
+
+           if (game.isLost()) {
+               System.out.println(game);
+               System.out.println("Perdu !");
+               break;
+           }
+
+           if (game.isWon()) {
+               System.out.println(game);
+               System.out.println("Gagné !");
+               break;
+           }
+       }
     }
     }
